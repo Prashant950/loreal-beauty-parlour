@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    background-color: #0E0C0A;
+    color: #FAF7F2;
+  }
+  
+  body {
+    @apply bg-noir text-ivory font-sans antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, .font-display {
+    @apply font-serif tracking-tight;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #DFB771;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Luxury Buttons */
+.btn {
+  @apply relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 min-h-[46px] rounded-full select-none overflow-hidden cursor-pointer;
+}
+
+.btn-gold {
+  @apply bg-gradient-to-r from-[#E5C17D] via-[#F5E6C8] to-[#C5A880] text-[#161412] font-bold shadow-lg shadow-[#DFB771]/25 hover:shadow-xl hover:shadow-[#DFB771]/45 hover:brightness-105 active:scale-95 border border-[#F5E6C8]/60;
+}
+
+.btn-gold-outline {
+  @apply border border-gold/70 text-champagne bg-black/25 backdrop-blur-sm hover:bg-gold hover:text-noir hover:border-gold shadow-sm active:scale-95;
+}
+
+.btn-line {
+  @apply border border-white/30 text-ivory bg-black/30 backdrop-blur-sm hover:border-champagne hover:text-champagne hover:bg-white/[0.08] active:scale-95;
+}
+
+.btn-dark {
+  @apply bg-[#211D1A]/90 text-ivory border border-white/15 hover:border-gold/50 hover:text-champagne active:scale-95;
+}
+
+/* Luxury Glass & Glow */
+.glass-card {
+  @apply bg-[#1C1917]/85 backdrop-blur-md border border-white/10 hover:border-gold/40 transition-all duration-300;
+}
+
+.glass-card-light {
+  @apply bg-white/[0.06] backdrop-blur-md border border-white/10 hover:border-champagne/40 transition-all duration-300;
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(223, 183, 113, 0.35);
+}
+
+.text-gold-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F5E6C8] via-[#DFB771] to-[#C5A880];
+}
+
+.border-gold-gradient {
+  border-image: linear-gradient(135deg, #ECC98C, #C5A880, #96784D) 1;
+}
+
+/* Hide scrollbar for tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar for page */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #141210;
+}
+::-webkit-scrollbar-thumb {
+  background: #332D28;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
